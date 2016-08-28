@@ -1,8 +1,8 @@
-<b>Raspberry Pi + 8*8 RGB LED MATRIX DEMO </B>
+Raspberry Pi + 8*8 RGB LED MATRIX DEMO 
 
 Just a sample python code. 
 
-Youtube : https://youtu.be/qAIZFgBWhSc
+  Youtube : https://youtu.be/qAIZFgBWhSc
 
 You have to install libary of rpi_ws281x wriiten by Jeremy Garff
 
