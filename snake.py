@@ -2,7 +2,8 @@
 # 8x8 RGB LED Snake Game
 # Autor : Tayfun ULU
 # For LCS NeoPixel library used.
-#
+# https://github.com/jgarff/rpi_ws281x
+# Autor of Library : Jeremy Garff
 import time, curses, thread, random
 from neopixel import *
 
