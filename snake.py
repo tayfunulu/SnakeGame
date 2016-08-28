@@ -49,6 +49,7 @@ def klavyeden ( threadName,bir):
 		curses.echo()
 		curses.cbreak()
 		curses.endwin()
+
 # write a list on led panel
 def writer_point (strip,list,color):
 	for i in list:
@@ -59,6 +60,7 @@ def clear_lcd (strip,color=Color(0,0,0)):
     for i in range(strip.numPixels()):
 		strip.setPixelColor(i,color)
 
+# game over screen and write scor on screen
 def game_over(strip,point):
 	# clean screan
 	clear_lcd(strip)
@@ -74,6 +76,7 @@ def game_over(strip,point):
 	face=[0,1,2,5,6,7,8,9,14,15,16,23,24,31,32,39,40,42,45,47,48,49,54,55,56,57,58,59,60,61,62,63]
 	mot=[18,26,27,28,29,21]
 
+	#to draw sad face
 	writer_point(strip,face,Color(0,0,0))
 	writer_point(strip,mot,Color(0,50,20))
 
@@ -84,6 +87,7 @@ def game_over(strip,point):
 
 	clear_lcd(strip,Color(0,0,0))
 
+	# characters
 	second_one = [12,20,28,36,44]
 	second_two =[12,13,14,22,28,29,30,36,44,45,46]
 	second_three =[12,13,14,20,28,29,30,36,44,45,46]
@@ -106,6 +110,7 @@ def game_over(strip,point):
 	first_nine=[8,16,24,25,26,32,34,40,41,42]
 	first_zero=[8,9,10,16,18,24,26,32,34,40,41,42]
 
+	# writing score
 	if point > 9 :
 		first_digit=int(str(point)[1])
 		second_digit=int(str(point)[0])
@@ -164,7 +169,7 @@ LED_BRIGHTNESS = 155     # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 
 if __name__ == '__main__':
-
+	# create object for Adafruit_NeoPixel
 	strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
 	strip.begin()
 
@@ -183,9 +188,11 @@ if __name__ == '__main__':
 	x_rand=random.randint(-1,1)
 	y_rand=random.randint(-1,1)
 
+	# to crate random point for forage
 	yem_x = random.randint(0,7)
 	yem_y = random.randint(0,7)
 
+	# control
 	if ( x==yem_x and y==yem_y):
 		yem_x = random.randint(0,7)
 		yem_y = random.randint(0,7)
@@ -193,6 +200,7 @@ if __name__ == '__main__':
 	liste_x = []
 	liste_y = []
 
+	# thead for keyboard interupts
 	thread.start_new_thread( klavyeden, ("Thread-1",'' ))
 
 	try :
