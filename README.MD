@@ -11,7 +11,7 @@ You have to install libary of rpi_ws281x wriiten by Jeremy Garff
 
 ## Usage
 
-  - Firstly you have to setup libary (rpi_ws281x) 
+  - Firstly you have to setup libary (rpi_ws281x) : https://github.com/jgarff/rpi_ws281x
   - To be sure that it's working  with sudo ./test
   - I had a problem with Raspberry pi 3 , i added these lines on /boot/config.txt file and problem was solved after reboot
 
